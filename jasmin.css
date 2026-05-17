@@ -1,0 +1,282 @@
+:root {
+  --bg: #0f0a0a;
+  --surface: #2a1f1f;
+  --surface-soft: rgba(42, 31, 31, 0.9);
+  --text: #f7f0f0;
+  --muted: #b89f9f;
+  --accent: #ff6b9d;
+  --accent-2: #ffb347;
+  --shadow: 0 28px 60px rgba(15, 10, 10, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(255, 107, 157, 0.14), transparent 28%),
+              radial-gradient(circle at bottom right, rgba(255, 179, 71, 0.14), transparent 25%),
+              linear-gradient(180deg, #1a0f0f 0%, #0f0a0a 100%);
+  color: var(--text);
+}
+
+.page-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  padding-bottom: 16px;
+  margin-bottom: 10px;
+}
+
+.hero-nav a {
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.hero-nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 66vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 70%),
+              radial-gradient(circle at top left, rgba(255, 107, 157, 0.16), transparent 28%),
+              radial-gradient(circle at bottom right, rgba(255, 179, 71, 0.12), transparent 30%);
+  border-radius: 32px;
+  padding: 44px 36px;
+  box-shadow: var(--shadow);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 107, 157, 0.16), transparent 32%);
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: #ff9bb8;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  line-height: 0.98;
+}
+
+.hero-text {
+  margin: 24px auto 0;
+  max-width: 680px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #f0d4d4;
+}
+
+.flower-group {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: flex;
+  gap: 20px;
+}
+
+.flower {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent) 30%, transparent 70%);
+  position: relative;
+}
+
+.flower::before,
+.flower::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-2) 30%, transparent 70%);
+}
+
+.flower::before {
+  top: -10px;
+  left: 0;
+}
+
+.flower::after {
+  top: 0;
+  left: -10px;
+}
+
+.section-card {
+  background: var(--surface-soft);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-top: 36px;
+}
+
+.about-card,
+.hobbies-card,
+.contact-card {
+  /* Additional styles if needed */
+}
+
+.section-card h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 2rem;
+}
+
+.section-card p {
+  margin: 0 0 18px;
+  line-height: 1.85;
+  color: #e8d4d4;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 18px;
+}
+
+.detail-grid h3 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: #ffb3b3;
+}
+
+.detail-grid p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.hobby-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.hobby-list article {
+  background: rgba(26, 15, 15, 0.96);
+  border-radius: 22px;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.hobby-list article:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 107, 157, 0.35);
+}
+
+.hobby-list h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: #ffb3b3;
+}
+
+.hobby-list p {
+  margin: 0;
+  line-height: 1.8;
+  color: #e8d4d4;
+}
+
+.contact-email {
+  margin-top: 18px;
+  font-size: 1rem;
+  color: #f0d4d4;
+}
+
+.contact-email a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+.contact-phone {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #f0d4d4;
+}
+
+.contact-phone a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-phone a:hover {
+  text-decoration: underline;
+}
+
+.page-footer {
+  margin-top: 38px;
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-wrap {
+    padding: 20px 16px 36px;
+  }
+
+  .hero {
+    padding: 30px 22px;
+    min-height: auto;
+  }
+
+  .hero-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-list {
+    grid-template-columns: 1fr;
+  }
+
+  .flower-group {
+    display: none;
+  }
+}
